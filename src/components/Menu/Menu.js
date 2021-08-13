@@ -4,7 +4,7 @@ import './Menu.css';
 
 const Menu = () => {
     return  <div className="Menu">
-                <ul>
+                <ul className="NavList">
                     <li className="Titulo">LOJINHA</li>
                     <li>Novidades</li>
                     <li>Produtos</li>                    

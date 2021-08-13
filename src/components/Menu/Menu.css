@@ -3,25 +3,25 @@
     font-family: 'Monospace';
 }
 
-ul {
+.NavList {
     color: #DADADA;
     list-style: none;
     display: inline-block;
 }
 
-ul li{
+.NavList li{
     display: inline-block;
     padding: 10px 60px;
     cursor: pointer;
     font-size: 14px;
 }
 
-ul li:hover{
+.NavList li:hover{
     color: #FFFFFF;
     text-shadow: 0 0 15px #827EAC;
 }
 
-.Titulo {
+.NavList .Titulo {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 24px;

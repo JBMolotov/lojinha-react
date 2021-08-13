@@ -1,0 +1,60 @@
+.Acesso {
+    width: 40%;
+    height: 450px;
+    text-align: left;
+    margin: 50px 0 0 0;
+    padding: 0 2em;
+    font-family: monospace;
+    color: #FFF;
+}
+
+.Acesso .Desc {
+    font-family: monospace;
+    letter-spacing: 1px;
+    margin-bottom: 87px;
+}
+
+.Acesso h1 {
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.Acesso ::-webkit-input-placeholder {
+    color: #CBC7EE;
+}
+
+.Acesso input {
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #646081;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0;
+    width: 50%;
+    color: #FFF;
+}
+
+.Acesso button {
+    margin: 108px 0;
+    font-size: 20px;
+    padding: 15px 30px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #3F50E7;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: rgba(48, 52, 90, 0.5) -10px 10px, 0 0 5px #827EAC;
+    cursor: pointer;
+}
+
+.Acesso button:hover {
+    background-color: #4e5ced;
+}
+
+.Acesso .erro {
+    color: #FF0000;
+    position: absolute;
+    margin-top: -20px;
+}
+
