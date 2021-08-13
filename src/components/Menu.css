@@ -1,0 +1,48 @@
+.Menu {
+    text-align: center;
+    font-family: 'Monospace';
+}
+
+ul {
+    color: #DADADA;
+    list-style: none;
+    display: inline-block;
+}
+
+ul li{
+    display: inline-block;
+    padding: 10px 60px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+ul li:hover{
+    color: #FFFFFF;
+    text-shadow: 0 0 15px #827EAC;
+}
+
+.Titulo {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 24px;
+    word-spacing: 5%;
+    padding: 0 40px;
+    letter-spacing: 2px;
+}
+
+.Carrinho {
+    font-size: 25px;
+}
+
+.NItensCarrinho {
+    padding: 2px 12px;
+    background-color: #827EAC;
+    border-radius: 10px 0 10px 0;
+    box-shadow: 0 0 10px #827EAC;
+}
+
+.line {
+    width: 80%;
+    border-bottom: solid 1px #8E88C1;
+    margin-left: 10%;
+}
