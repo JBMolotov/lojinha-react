@@ -16,17 +16,17 @@ const Login = () => {
         const { name, value } = ev.target;
 
         setValues({...values, [name]: value});
-
-        // console.log(values.email);    
     }
 
     function validate(values) {
         const erros = {};
 
-        if(values.email != 'teste@liven.tech' && values.senha != '123' )
-        {
+        if (values.email == null)
+            erros.geral = 'Insira um email válido'
+        else if (values.senha == null)
+            erros.geral = 'Insira uma senha válida'
+        else if(values.email != 'teste@liven.tech' && values.senha != '123' )
             erros.geral = 'Email e/ou senha incorretos'
-        }
 
         return erros;
     }
@@ -34,7 +34,7 @@ const Login = () => {
 
     function onSubmit(ev) {
         ev.preventDefault();
-        console.log(values);
+        // console.log(values);
 
         setErros(validate(values));
     }

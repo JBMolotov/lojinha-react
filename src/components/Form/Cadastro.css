@@ -12,6 +12,7 @@
 .Cadastro p {
     font-family: monospace;
     letter-spacing: 1px;
+    margin-bottom: 40px;
 }
 
 .Cadastro h1 {
@@ -51,5 +52,13 @@
 
 .Cadastro button:hover {
     background-color: #4e5ced;
+}
+
+.Cadastro .erro {
+    color: #FF0000;
+    position: absolute;
+    text-align: right;
+    margin: -20px 0 0 340px;
+
 }
 
