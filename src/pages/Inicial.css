@@ -1,14 +1,22 @@
-body {
-  background-color: #24204A;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.Boasvindas {
+    width: 60%;
+    text-align: center;
+  
+    height: 265px;
+    margin: 50px 20% 100px 20%;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
 }
 
-.Inicial {
-    text-align: center;
-    background-color: aqua;
-  }
+.Logo {
+    font-size: 100px;
+    color: #D7B399;
+}
 
-.rowC{
-  display: flex;
-  flex-direction: row;
-  margin: 0 0 0 20px;
+.SegundaCor{
+    color: #D7B399;
 }

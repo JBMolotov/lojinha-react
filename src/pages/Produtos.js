@@ -7,7 +7,6 @@ import './Produtos.css';
 function Produtos() {
     const [List, setList] = useState(null);
 
-
     useEffect(()=> {
         //Pegando a lista
         fetch('https://5d6da1df777f670014036125.mockapi.io/api/v1/product')
@@ -15,7 +14,7 @@ function Produtos() {
         .then(data => setList(data));
     }, []);
 
-    // console.log(List);
+  
 
     return (
         <> 
@@ -25,7 +24,7 @@ function Produtos() {
 
                 { List != null ?
                 List.map((item, key)=>(
-                        <Produto key={key} item={item} />
+                        <Produto key={key} item={item}  />
                 )) :  <div className="Loading">
                     <img src="../../Gear-Loading.gif" />
                     <h2>Carregando produtos...</h2>

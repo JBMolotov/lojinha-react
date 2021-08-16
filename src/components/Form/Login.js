@@ -11,6 +11,7 @@ const initialValue = {
 const Login = () => {
     const [values, setValues] = useState({})
     const [erros, setErros] = useState({})
+    
 
     function onChange(ev) {
         const { name, value } = ev.target;
@@ -18,32 +19,43 @@ const Login = () => {
         setValues({...values, [name]: value});
     }
 
-    function validate(values) {
+   function validate(values) {
         const erros = {};
 
         if (values.email == null)
             erros.geral = 'Insira um email válido'
         else if (values.senha == null)
             erros.geral = 'Insira uma senha válida'
-        else if(values.email != 'teste@liven.tech' && values.senha != '123' )
-            erros.geral = 'Email e/ou senha incorretos'
+        else erros.geral = 'Email e/ou senha incorretos'
 
         return erros;
     }
 
+    
+
 
     function onSubmit(ev) {
         ev.preventDefault();
-        // console.log(values);
+                
+        setErros( validate(values));
 
-        setErros(validate(values));
+        console.log(erros);
+        
+        if ((values.email == 'teste@liven.tech' && values.senha == '123'))
+           {
+                localStorage.setItem('@lojinha/auth', true);
+                window.location.reload();
+           }
+        
+        
+
     }
 
   
 
     return ( <div className="Acesso">
 
-            <h1>Acessar</h1>
+            <h1>Entrar</h1>
             <p className="Desc">Se você já possui um cadastro é só entrar e aproveitar!</p>
             <form onSubmit={onSubmit}> 
                 {erros.geral && <p name="error" className="erro">{erros.geral}</p>}
@@ -60,7 +72,7 @@ const Login = () => {
                     onChange={onChange}
                 />
                 <div>
-                    <button type='submit'> Acessar </button>
+                    <button type='submit'> Entrar </button>
                 </div>
             </form>
 

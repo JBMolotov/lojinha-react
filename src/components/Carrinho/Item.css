@@ -1,10 +1,10 @@
-.Prod {
-    width: 25%;
-    height: 500px;
-    margin: 0 1% 50px 1%;
+.Item {
+    width: 80%;
+    height: 220px;
+    margin: 0 0 20px 8%;
     padding: 2%;
     float: left;
-    text-align: center;
+    text-align: left;
     color: #D7B399;
 
     --b:5px;
@@ -26,15 +26,15 @@
     background-repeat:no-repeat;
 }
 
-.Prod li {
+.Item li {
     list-style: none;
 }
 
-.Prod h2 {
+.Item h2 {
     color: #FFF;
 }
 
-.Prod button {
+.Item button {
     margin: 15px 0;
     width: 170px;
     font-size: 14px;
@@ -49,15 +49,11 @@
     cursor: pointer;
 }
 
-.Prod button:hover{
+.Item button:hover{
     background-color: #3e95e7;
 }
 
-.Prod .CarIcon {
-    font-size: 20px;
-}
-
-.Prod img {
+.Item img {
     width: 250px;
     height: 200px;
 }

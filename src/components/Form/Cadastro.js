@@ -36,6 +36,7 @@ const Cadastro = () => {
     function onSubmit(ev) {
         ev.preventDefault();
         setErros(validate(values));
+        
     }
 
     return ( <div className="Cadastro">

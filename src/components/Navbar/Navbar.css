@@ -2,6 +2,7 @@
 
 .Navbar {
     text-align: center;
+    margin-left: -40px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -11,7 +12,7 @@
     display: inline-block;
 }
 
-a, a:link, a:visited, a:focus, a:hover, a:active{
+a, a:link, a:visited, a:focus, a:active{
     color:#DADADA;
     text-decoration:none; 
   }
@@ -24,12 +25,12 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 }
 
 .NavList li:hover{
-    color: #FFFFFF;
-    text-shadow: 0 0 15px #827EAC;
+    color: #D7B399;
+    text-shadow: 0 0 20px #FFF;
 }
 
 .NavList .Titulo {
-    color: #FFFFFF;
+    color: #D7B399;
     font-weight: bold;
     font-size: 24px;
     word-spacing: 5%;
@@ -37,8 +38,8 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     letter-spacing: 2px;
 }
 
-.Navbar .Carrinho {
-    font-size: 25px;
+.Navbar .CarIcon {
+    font-size: 20px;
 }
 
 .NItensCarrinho {

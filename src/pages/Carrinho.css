@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.Produtos {
+.Carrinho {
     width: 90%;
-    height: 10300px;
+    /* background-color: teal; */
+    height: 1000px;
     margin: 50px 5% 100px 5%;
     font-family: 'Montserrat', sans-serif;
 }
