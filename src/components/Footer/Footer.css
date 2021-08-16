@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .Footer {
-    
     height: 100px;
     background-color: #212121;
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 1rem;  
     bottom: 0;
     left: 0;
-    font-family: 'Montserrat';
+    right: 0;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     padding-left: 50px;
 }

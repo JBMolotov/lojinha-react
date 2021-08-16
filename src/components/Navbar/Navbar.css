@@ -1,6 +1,8 @@
-.Menu {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.Navbar {
     text-align: center;
-    font-family: 'Monospace';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .NavList {
@@ -8,6 +10,11 @@
     list-style: none;
     display: inline-block;
 }
+
+a, a:link, a:visited, a:focus, a:hover, a:active{
+    color:#DADADA;
+    text-decoration:none; 
+  }
 
 .NavList li{
     display: inline-block;
@@ -30,7 +37,7 @@
     letter-spacing: 2px;
 }
 
-.Carrinho {
+.Navbar .Carrinho {
     font-size: 25px;
 }
 

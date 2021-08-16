@@ -1,0 +1,73 @@
+.Prod {
+    width: 25%;
+    height: 500px;
+    margin: 0 1% 50px 1%;
+    padding: 2%;
+    border:1px solid black;
+    float: left;
+    text-align: center;
+    color: #D7B399;
+
+    --b:5px;
+    --c:#D7B399;
+    --w:12%;
+
+    border:var(--b) solid transparent; /* space for the border */
+    background:
+        linear-gradient(var(--c),var(--c)) top left,
+        linear-gradient(var(--c),var(--c)) top left,
+        linear-gradient(var(--c),var(--c)) bottom left,
+        linear-gradient(var(--c),var(--c)) bottom left,
+        linear-gradient(var(--c),var(--c)) top right,
+        linear-gradient(var(--c),var(--c)) top right,
+        linear-gradient(var(--c),var(--c)) bottom right,
+        linear-gradient(var(--c),var(--c)) bottom right;
+    background-size:var(--b) var(--w),var(--w) var(--b);
+    background-origin:border-box;
+    background-repeat:no-repeat;
+}
+
+.Prod li {
+    list-style: none;
+}
+
+.Prod h2 {
+    color: #FFF;
+}
+
+.Prod button {
+    margin: 15px 0;
+    width: 170px;
+    font-size: 14px;
+    padding: 15px 30px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #3F50E7;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: rgba(48, 52, 90, 0.5) -10px 10px, 0 0 5px #827EAC;
+    cursor: pointer;
+}
+
+.Prod button:hover{
+    background-color: #3e95e7;
+}
+
+.Prod .Carrinho {
+    font-size: 20px;
+}
+
+.Prod img {
+    width: 250px;
+    height: 200px;
+}
+
+.Loading img {
+    margin: 50px 0px 0px 500px;
+}
+
+.Loading h2 {
+    color: #D7B399;
+    margin: 0px 0px 0px 480px;
+}
