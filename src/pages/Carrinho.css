@@ -2,8 +2,9 @@
 
 .Carrinho {
     width: 90%;
+    min-height: 1000px;
     /* background-color: teal; */
-    height: 1000px;
+    height: auto;
     margin: 50px 5% 100px 5%;
     font-family: 'Montserrat', sans-serif;
 }

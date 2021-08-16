@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../store/Carrinho/Reducer'
+
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Produto from '../components/Produto/Produto.js'
@@ -6,6 +9,7 @@ import './Produtos.css';
 
 function Produtos() {
     const [List, setList] = useState(null);
+    const dispatch = useDispatch();
 
     useEffect(()=> {
         //Pegando a lista
@@ -14,7 +18,10 @@ function Produtos() {
         .then(data => setList(data));
     }, []);
 
-  
+    function addItemCart(item) {
+        console.log(item)
+        dispatch(addItem(item))
+    }
 
     return (
         <> 
@@ -24,7 +31,7 @@ function Produtos() {
 
                 { List != null ?
                 List.map((item, key)=>(
-                        <Produto key={key} item={item}  />
+                        <Produto key={key} item={item} addItemCart={addItemCart} />
                 )) :  <div className="Loading">
                     <img src="../../Gear-Loading.gif" />
                     <h2>Carregando produtos...</h2>

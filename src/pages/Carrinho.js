@@ -3,43 +3,33 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import CarrinhoItems from '../components/Carrinho/Items';
 import './Carrinho.css';
-
+import { useSelector } from 'react-redux'; 
+import { useDispatch } from 'react-redux';
+import { removeItem } from '../store/Carrinho/Reducer' 
 
 function Carrinho() {
    
+    const carrinho = useSelector(state => state.carrinho)
+    const dispatch = useDispatch();
 
-    const [items, setItems] = useState([
-        {
-            id: "1",
-            name: "Teste",
-            price: "2555"
-        },
-        {
-            id: "2",
-            name: "Jaqueta de couro",
-            price: "4352"
-        }
-    ]);
-
-    const handleItemAddition = (itemName) => {
-        const newItems = [
-            ...items,
-            {
-                name: itemName,
-                id: "3"
-            }
-        ];
-
-        setItems(newItems);
+    function removeItemCarrinho (id) {
+        
+        dispatch(removeItem(id));
     }
+
     
     return (
         <> 
             <Navbar />
-            {/* {loggin} */}
+            
             <div className="Carrinho">
-                <CarrinhoItems items={items} />
-            </div>
+                { carrinho.length == 0 ? 
+                    <h1 className="Boasvindas"> Sem produtos no carrinho... </h1>
+                    :
+                    <CarrinhoItems items={carrinho} removeItemCarrinho={removeItemCarrinho}/>    
+                }
+            </div>    
+            
         
             <Footer />
         </>
