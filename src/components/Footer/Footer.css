@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .Footer {
+    width: 100%;
     height: 100px;
     background-color: #212121;
     margin-top: 2rem;
@@ -8,7 +9,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    position: relative;
+    float: left;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     padding-left: 50px;

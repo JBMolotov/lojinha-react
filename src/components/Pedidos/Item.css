@@ -1,0 +1,42 @@
+.Item {
+    width: 80%;
+    height: 150px;
+    margin: 0 0 120px 6%;
+    padding: 2%;
+    float: left;
+    text-align: left;
+    color: #D7B399;
+    display: flex;
+    flex-direction: row;
+
+    --b:5px;
+    --c:#D7B399;
+    --w:12%;
+
+    border:var(--b) solid transparent; /* space for the border */
+    background:
+        linear-gradient(var(--c),var(--c)) top left,
+        linear-gradient(var(--c),var(--c)) top left,
+        linear-gradient(var(--c),var(--c)) bottom left,
+        linear-gradient(var(--c),var(--c)) bottom left,
+        linear-gradient(var(--c),var(--c)) top right,
+        linear-gradient(var(--c),var(--c)) top right,
+        linear-gradient(var(--c),var(--c)) bottom right,
+        linear-gradient(var(--c),var(--c)) bottom right;
+    background-size:var(--b) var(--w),var(--w) var(--b);
+    background-origin:border-box;
+    background-repeat:no-repeat;
+}
+
+.ItemActions{
+    margin: 0 0 0 350px;
+}
+
+.Item li {
+    list-style: none;
+    font-size: 12px;
+}
+
+.Item h2 {
+    color: #FFF;
+}

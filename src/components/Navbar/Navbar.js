@@ -16,7 +16,7 @@ const Navbar = () => {
                     <li className="Titulo"> <Link to="./">LOJINHA</Link></li>
                     {/* <li>Novidades </li> */}
                     <li><Link to="./Produtos">Produtos</Link> </li>                    
-                    <li><Link to="./">Meus pedidos</Link> </li>
+                    <li><Link to="./Pedidos">Meus pedidos</Link> </li>
                     <li><Link to="./Acessar">Minha conta</Link></li>
                     <li><Link to="./Carrinho"><BiShoppingBag className="CarIcon"/> <span className="NItensCarrinho">{lenght}</span></Link></li>
                 </ul>

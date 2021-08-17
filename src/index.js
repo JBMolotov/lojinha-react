@@ -8,7 +8,8 @@ import Produtos from './pages/Produtos';
 import Pedidos from './pages/Pedidos';
 import Carrinho from './pages/Carrinho';
 import Acessar from './pages/Acessar';
-import store from './store/Carrinho'
+import store from './store'
+// import store from './store/Carrinho'
 import * as serviceWorker from './serviceWorker';
 import { 
   BrowserRouter as Router,
@@ -17,17 +18,17 @@ import {
 import { Provider } from 'react-redux';
 
 const options = {
-  timeout: 1000,
+  timeout: 3000,
   position: 'bottom right',
   offset: '30px',
   transition: 'scale'
 };
 
 ReactDOM.render(
-  <Provider store={store} {...options}>
+  <Provider store={store}>
     <Router>
       <React.StrictMode>
-          <AlertProvider template={AlertTemplate}>
+          <AlertProvider template={AlertTemplate}  {...options}>
             <Route exact path="/" component={Inicial}/>
             <Route exact path="/Produtos" component={Produtos}/>
             <Route exact path="/Pedidos" component={Pedidos}/>

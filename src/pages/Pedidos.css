@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.Carrinho {
+.Pedidos {
     width: 90%;
-    min-height: 500px;
+    min-height: 380px;
     /* background-color: teal; */
     height: auto;
     margin: 50px 5% 100px 5%;

@@ -1,14 +1,15 @@
 import { createAction, createReducer, current } from '@reduxjs/toolkit'
-import { act } from 'react-dom/test-utils';
 
 const INITIAL_STATE = [];
 
 export const addItem = createAction('ADD_ITEM');
 export const removeItem = createAction('REMOVE_ITEM');
+export const removeAll = createAction('REMOVE_ALL');
 
 export default createReducer(INITIAL_STATE, {
     [addItem]: (state, action) => HandleAddItem(state, action),
-    [removeItem]: (state, action) => HandleRemoveItem(state, action)
+    [removeItem]: (state, action) => HandleRemoveItem(state, action),
+    [removeAll]: (state, action) => []
 });
 
 
