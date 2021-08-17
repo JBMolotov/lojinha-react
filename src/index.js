@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider as AlertProvider} from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 import './index.css';
 import Inicial from './pages/Inicial';
 import Produtos from './pages/Produtos';
@@ -14,17 +16,24 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux';
 
+const options = {
+  timeout: 1000,
+  position: 'bottom right',
+  offset: '30px',
+  transition: 'scale'
+};
+
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store} {...options}>
     <Router>
       <React.StrictMode>
-          <Route exact path="/" component={Inicial}/>
-          <Route exact path="/Produtos" component={Produtos}/>
-          <Route exact path="/Pedidos" component={Pedidos}/>
-          <Route exact path="/Acessar" component={Acessar}/>
-          <Route exact path="/Carrinho" component={Carrinho}/>
-          {/* <Route exact path="/Carrinho"  render={(props) => (<Carrinho {...props} key={1} isAuthed={isAuthed} /> )}/> */}
-          {/* {isAuthed != null || isAuthed ?  <Route exact path="/Carrinho" component={Carrinho}/> : <Route exact path="/Carrinho" component={Inicial}/>} */}
+          <AlertProvider template={AlertTemplate}>
+            <Route exact path="/" component={Inicial}/>
+            <Route exact path="/Produtos" component={Produtos}/>
+            <Route exact path="/Pedidos" component={Pedidos}/>
+            <Route exact path="/Acessar" component={Acessar}/>
+            <Route exact path="/Carrinho" component={Carrinho}/>
+          </AlertProvider>
           
           
       </React.StrictMode>

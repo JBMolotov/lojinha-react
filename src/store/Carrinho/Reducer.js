@@ -8,8 +8,7 @@ export const removeItem = createAction('REMOVE_ITEM');
 
 export default createReducer(INITIAL_STATE, {
     [addItem]: (state, action) => HandleAddItem(state, action),
-    [removeItem]: (state, action) => { HandleRemoveItem(state, action)
-    }
+    [removeItem]: (state, action) => HandleRemoveItem(state, action)
 });
 
 

@@ -6,19 +6,23 @@ import './Carrinho.css';
 import { useSelector } from 'react-redux'; 
 import { useDispatch } from 'react-redux';
 import { addItem, removeItem } from '../store/Carrinho/Reducer' 
+import { useAlert } from "react-alert";
 
 
 function Carrinho() {
-   
     const carrinho = useSelector(state => state.carrinho)
     const dispatch = useDispatch();
+    const alert = useAlert();
+
 
     function removeItemCarrinho (id) {
         dispatch(removeItem(id));
+        alert.success("Produto removido!");
     }
 
     function addItemCarrinho (item) {
         dispatch(addItem(item));
+        alert.success("Produto adicionado!");
     }
 
     
@@ -33,6 +37,7 @@ function Carrinho() {
                     :
                     <CarrinhoItems items={carrinho} addItemCarrinho={addItemCarrinho} removeItemCarrinho={removeItemCarrinho}/>    
                 }
+                
             </div>    
             
         
