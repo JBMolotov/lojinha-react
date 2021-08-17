@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../store/Carrinho/Reducer'
-
+import { addMessage } from '../store/Mensagem/Reducer'
+import './Produtos.css';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Produto from '../components/Produto/Produto.js'
-import './Produtos.css';
+import Mensagem from '../components/Mensagem/Mensagem';
 
 function Produtos() {
     const [List, setList] = useState(null);
@@ -20,11 +21,15 @@ function Produtos() {
 
     function addItemCart(item) {
         dispatch(addItem(item))
+
+        // dispatch(addMessage('${item.name} adicionado ao carrinho!'));
     }
 
     return (
         <> 
             <Navbar />
+
+            {/* <Mensagem msg="Produto adicionado ao carrinho!"/> */}
 
             <div className="Produtos">
 
@@ -37,6 +42,7 @@ function Produtos() {
                 </div> }
                
             </div>
+
         
             <Footer />
         </>

@@ -12,9 +12,11 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho }) => {
 
     return ( 
         <>
-            { items ? items.map((item) => (
+            { items ?  items.map((item) => (
                 <Item key={item.id} item={item} addItemCarrinho={addItemCarrinho} removeItemCarrinho={removeItemCarrinho} /> 
-            )) : <h1></h1> }
+            )) : <h1></h1> 
+            }
+
 
             <div className="Cupom">
                 <p>Sem cupom aplicado</p>

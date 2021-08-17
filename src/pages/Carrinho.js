@@ -27,6 +27,7 @@ function Carrinho() {
             <Navbar />
             
             <div className="Carrinho">
+                {/* { console.log(carrinho) } */}
                 { carrinho && carrinho.length == 0 ? 
                     <h1 className="Boasvindas"> Sem produtos no carrinho... </h1>
                     :
