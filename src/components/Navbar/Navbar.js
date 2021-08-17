@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 
 
 const Navbar = () => {
+    // console.log(state => state.carrinho.items)
     const lenght = useSelector(state => state.carrinho.length)
 
     return <div className="Navbar">

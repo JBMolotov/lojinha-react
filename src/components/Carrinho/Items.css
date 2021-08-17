@@ -1,0 +1,9 @@
+.Pagamento {
+    width: 80%;
+    height: 300px;
+    margin: 5% 0 20% 8%;
+    text-align: center;
+    background-color: lawngreen;
+    float: left;
+    color: blueviolet;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React from 'react';
 import './Inicial.css';
 import { BiShoppingBag } from "react-icons/bi";
 import Navbar from '../components/Navbar/Navbar';

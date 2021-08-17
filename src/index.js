@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Inicial from './pages/Inicial';
@@ -13,8 +13,6 @@ import {
   Route
 } from "react-router-dom";
 import { Provider } from 'react-redux';
-
-const isAuthed = localStorage.getItem('@lojinha/auth');
 
 ReactDOM.render(
   <Provider store={store}>

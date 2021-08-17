@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Item.css';
+import { formatPrice } from '../../utils/format-price'
 
-const Item = ({ item, removeItemCarrinho }) => {
+const Item = ({ item,  addItemCarrinho, removeItemCarrinho }) => {
     
 
     return ( 
@@ -9,14 +10,14 @@ const Item = ({ item, removeItemCarrinho }) => {
             <img className="ItemImg" src={item.image} alt={item.name}/>
             <div className="ItemInfo">
                 <li><h2>{item.name}</h2></li>
-                <li><h2>R$ {item.price}</h2></li>
+                <li><h2>{ formatPrice(item.price)}</h2></li>
                 <li><h3>Quantidade: {item.quantity}</h3></li>
-                <li><h1>Subtotal: R$ {item.price}</h1></li>
+                <li><h1>Subtotal: { formatPrice(item.price * item.quantity)}</h1></li>
             </div>
             
             <div className="ItemActions">
-                <li><button className="ItemButton ItemAdd">Adicionar</button></li>
-                <li><button onClick={() => removeItemCarrinho(item.id)} className="ItemButton">Remover</button></li>                
+                <li><button onClick={() => addItemCarrinho(item)} className="ItemButton ItemAdd">Adicionar</button></li>
+                <li><button onClick={() => removeItemCarrinho(item)} className="ItemButton">Remover</button></li>                
             </div>
         </div>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem } from '../store/Carrinho/Reducer'
 
 import Navbar from '../components/Navbar/Navbar';
@@ -19,7 +19,6 @@ function Produtos() {
     }, []);
 
     function addItemCart(item) {
-        console.log(item)
         dispatch(addItem(item))
     }
 
@@ -33,7 +32,7 @@ function Produtos() {
                 List.map((item, key)=>(
                         <Produto key={key} item={item} addItemCart={addItemCart} />
                 )) :  <div className="Loading">
-                    <img src="../../Gear-Loading.gif" />
+                    <img src="../../Gear-Loading.gif" alt="Carregando" />
                     <h2>Carregando produtos...</h2>
                 </div> }
                

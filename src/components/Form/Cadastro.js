@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import './Cadastro.css';
 
-const initialValue = {
-    nome: null,
-    email: null,
-    senha: null,
-    confsenha: null
-}
 
 const Cadastro = () => {
     const [values, setValues] = useState({})
@@ -27,7 +21,7 @@ const Cadastro = () => {
             erros.geral = 'Insira um email válido'
         else if (values.senha == null || values.senha.lenght >= 8)
             erros.geral = 'Insira uma senha válida'
-        else  if(!(values.senha == values.confsenha))
+        else  if(!(values.senha === values.confsenha))
             erros.geral = 'Senhas não coincidem'
 
         return erros;

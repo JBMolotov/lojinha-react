@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
 
-const initialValue = {
-    email: null,
-    senha: null
-}
-
-
-
 const Login = () => {
     const [values, setValues] = useState({})
     const [erros, setErros] = useState({})
@@ -41,7 +34,7 @@ const Login = () => {
 
         console.log(erros);
         
-        if ((values.email == 'teste@liven.tech' && values.senha == '123'))
+        if ((values.email === 'teste@liven.tech' && values.senha === '123'))
            {
                 localStorage.setItem('@lojinha/auth', true);
                 window.location.reload();
