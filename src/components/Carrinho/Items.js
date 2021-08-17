@@ -16,8 +16,21 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho }) => {
                 <Item key={item.id} item={item} addItemCarrinho={addItemCarrinho} removeItemCarrinho={removeItemCarrinho} /> 
             )) : <h1></h1> }
 
+            <div className="Cupom">
+                <p>Sem cupom aplicado</p>
+                <input placeholder="Cupom de desconto"></input>
+                <button>Aplicar cupom</button>
+            </div>
+
+            <div className="Opcoes">
+                <h2>Cartão de crédito</h2>
+                <li><button className="MetPag">Escolher método de pagamento</button></li>
+            </div>
+
             <div className="Pagamento">
                 <h1>Total: {formatPrice(total)}</h1>
+                
+                <li><button className="Finalizar">Finalizar compra</button></li>
             </div>
         </>
      );

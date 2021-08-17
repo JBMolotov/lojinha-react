@@ -1,9 +1,96 @@
-.Pagamento {
+.Cupom {
     width: 80%;
-    height: 300px;
-    margin: 5% 0 20% 8%;
+    height: 200px;
+    margin: 0 0 30% 8%;
     text-align: center;
-    background-color: lawngreen;
+    color: #FFF;
+    /* position: initial; */
+    list-style: none;
+    /* background-color: lightcoral; */
+}
+
+.Cupom button {
+    padding: 15px 30px;
+    margin: 0 10%;
+    font-family: monospace;
+    font-weight: bold;
+    color: #FFF;
+    border: 0;
+    border-radius: 10px;
+    background-color: #3F50E7;
+    box-shadow: rgba(100, 102, 114, 0.5) -5px 10px, 0 0 5px #827EAC;
+    cursor: pointer;
+}
+
+.Cupom button:hover {
+    background-color: #D7B399;
+}
+
+.Cupom input {
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #646081;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0;
+    width: 50%;
+    color: #FFF;
+}
+
+.Cupom ::-webkit-input-placeholder {
+    color: #CBC7EE;
+}
+
+.Opcoes {
+    width: 40%;
+    height: 200px;
+    margin: 5% 0 0% 8%;
+    text-align: left;
     float: left;
-    color: blueviolet;
+    color: #FFF;
+    list-style: none;
+    
+    /* background-color: lightcoral; */
+}
+
+.Pagamento {
+    width: 40%;
+    height: 200px;
+    margin: 5% 0 0 1%;
+    text-align: right;
+    float: left;
+    color: #FFF;
+    list-style: none;
+    /* background-color: lightgreen; */
+}
+
+.MetPag, .Finalizar {
+    padding: 15px 30px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #FFF;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: rgba(48, 52, 90, 0.5) -10px 10px, 0 0 5px #827EAC;
+    cursor: pointer;
+}
+
+.MetPag {
+    width: 40%;
+    font-size: 12px;
+    background-color: #3F50E7;
+}
+
+.MetPag:hover {
+    background-color: #D7B399;
+}
+
+.Finalizar {
+    width: 60%;
+    font-size: 20px;
+    background-color: #3F50E7;
+}
+
+.Finalizar:hover {
+    background-color: #25944a;
 }
