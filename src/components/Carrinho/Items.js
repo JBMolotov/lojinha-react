@@ -10,18 +10,22 @@ import './Items.css';
 
 const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) => {
     const [values, setValues] = useState({})
-    const total = useSelector(calculateTotalSelector);
+    const [cupom, setCupom] = useState({})
+    let total = useSelector(calculateTotalSelector);
     const alert = useAlert();
-
+    
+        
     function onChange(ev) {
         const { name, value } = ev.target;
-        setValues({cupom: value})
+        setValues({...values, [name]: value});
     }
 
-    function AplicarCupom(values){
-        
+    function AplicarCupom (){
         if (values.cupom == 'PRIMEIRACOMPRA')
+        {
             alert.success("Cupom aplicado!");
+            setCupom('primeiracompra');
+        }
         else
             alert.error("Cupom não é válido");
     }
@@ -36,8 +40,8 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
 
 
             <div className="Cupom">
-                <p>Sem cupom aplicado</p>
-                <input onChange={onChange} placeholder="Cupom de desconto"></input>
+                {cupom == 'primeiracompra' ? <p>Cupom de 20% aplicado</p> : <p>Sem cupom aplicado</p>}
+                <input name="cupom" onChange={onChange} placeholder="Cupom de desconto"></input>
                 <button onClick={AplicarCupom} >Aplicar cupom</button>
             </div>
 
@@ -47,7 +51,10 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
             </div>
 
             <div className="Pagamento">
-                <h1>Total: {formatPrice(total)}</h1>
+                {cupom == 'primeiracompra'
+                ? <h1>Total: {formatPrice(total*0.8)}</h1>
+                : <h1>Total: {formatPrice(total)}</h1> }
+                
                 
                 <li><button onClick={() => addItemsPedido(items)} className="Finalizar">Finalizar compra</button></li>
             </div>
