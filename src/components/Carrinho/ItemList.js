@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Item from "./Item";
 import { useSelector } from 'react-redux';
 //import { removeItem } from '../../store/Carrinho/Reducer';
-import { addItem, calculateTotalSelector } from '../../store/Carrinho/Reducer';
+import { calculateTotalSelector } from '../../store/Carrinho/Reducer';
 import { formatPrice } from '../../utils/format-price'
 import { useAlert } from "react-alert";
 
-import './Items.css';
+import './ItemList.css';
 
 const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) => {
     const [values, setValues] = useState({})
@@ -21,7 +21,7 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
     }
 
     function AplicarCupom (){
-        if (values.cupom == 'PRIMEIRACOMPRA')
+        if (values.cupom === 'PRIMEIRACOMPRA')
         {
             alert.success("Cupom aplicado!");
             setCupom('primeiracompra');
@@ -30,17 +30,36 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
             alert.error("Cupom não é válido");
     }
 
+    function temItems () {
+        // console.log(items)
+        if (items) {
+            return (
+                items.map((item) => (
+                    <Item key={item.id} item={item} addItemCarrinho={addItemCarrinho} removeItemCarrinho={removeItemCarrinho} /> ))
+            )
+        }
+    }
+
+    function checarCupom (cupom) {
+        if(cupom === 'primeiracompra')
+            return (<p>Cupom de 20% aplicado</p>)
+        else 
+            return (<p>Sem cupom aplicado</p>)
+    }
+
+    function calcularTotal (cupom) {
+        if(cupom === 'primeiracompra')
+            return ( <h1>Total: {formatPrice(total*0.8)}</h1> )
+        else
+            return ( <h1>Total: {formatPrice(total)}</h1> )
+    }
+
     return ( 
         <>
-            {}
-            { items ?  items.map((item) => (
-                <Item key={item.id} item={item} addItemCarrinho={addItemCarrinho} removeItemCarrinho={removeItemCarrinho} /> 
-            )) : <h1></h1> 
-            }
-
+            { temItems() }
 
             <div className="Cupom">
-                {cupom == 'primeiracompra' ? <p>Cupom de 20% aplicado</p> : <p>Sem cupom aplicado</p>}
+                {checarCupom()}
                 <input name="cupom" onChange={onChange} placeholder="Cupom de desconto"></input>
                 <button onClick={AplicarCupom} >Aplicar cupom</button>
             </div>
@@ -51,11 +70,7 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
             </div>
 
             <div className="Pagamento">
-                {cupom == 'primeiracompra'
-                ? <h1>Total: {formatPrice(total*0.8)}</h1>
-                : <h1>Total: {formatPrice(total)}</h1> }
-                
-                
+                { calcularTotal() }
                 <li><button onClick={() => addItemsPedido(items)} className="Finalizar">Finalizar compra</button></li>
             </div>
         </>

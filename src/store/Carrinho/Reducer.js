@@ -1,4 +1,4 @@
-import { createAction, createReducer, current } from '@reduxjs/toolkit'
+import { createAction, createReducer } from '@reduxjs/toolkit'
 
 const INITIAL_STATE = [];
 
@@ -7,18 +7,21 @@ export const removeItem = createAction('REMOVE_ITEM');
 export const removeAll = createAction('REMOVE_ALL');
 
 export default createReducer(INITIAL_STATE, {
-    [addItem]: (state, action) => HandleAddItem(state, action),
-    [removeItem]: (state, action) => HandleRemoveItem(state, action),
-    [removeAll]: (state, action) => []
+    [addItem]: (state, action) => handleAddItem(state, action),
+    [removeItem]: (state, action) => handleRemoveItem(state, action),
+    [removeAll]: []
 });
 
-
-function HandleAddItem(state, action) {
-    var newItem = '';
-    if (action.payload.quantity == undefined)
-        newItem = Object.assign(action.payload, { quantity: 1 });
+function novoItem (action) {
+    if (action.payload.quantity === undefined)
+        return Object.assign(action.payload, { quantity: 1 });
     else    
-        newItem = action.payload;
+        return action.payload;
+}
+
+function handleAddItem(state, action) {
+    const newItem = novoItem(action);
+    console.log(newItem);
 
     const existItem = state.some((item) => item.id === newItem.id);
 
@@ -33,23 +36,22 @@ function HandleAddItem(state, action) {
     return [...state, newItem];
 }
 
-function HandleRemoveItem(state, action) {
+function handleRemoveItem(state, action) {
     const loadItem = action.payload;
-
     const existItem = state.findIndex((item) => item.id === loadItem.id);
-
+    const stateItem = state[existItem];
 
     if (existItem !== -1) {
-        if ( state[existItem].quantity > 1) {
-            state[existItem] = { ...state[existItem], quantity: state[existItem].quantity - 1 }
+        if ( stateItem.quantity > 1) {
+            state[existItem] = { ...stateItem, quantity: stateItem.quantity - 1 }
         } else {
-            state = state.filter(item => item.id !== state[existItem].id) 
+            state = state.filter(item => item.id !== stateItem.id) 
         }
     }
 
-    return state
-
+    return state;
 }
+
 
 
 export const calculateTotalSelector = state => {

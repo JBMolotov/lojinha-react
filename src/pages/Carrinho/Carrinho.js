@@ -1,11 +1,9 @@
 import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-import CarrinhoItems from '../components/Carrinho/Items';
+import CarrinhoItems from '../../components/Carrinho/ItemList';
 import './Carrinho.css';
 import { useSelector, useDispatch } from 'react-redux'; 
-import { addItem, removeItem, removeAll } from '../store/Carrinho/Reducer'
-import { addPedido } from '../store/Pedidos/Reducer'  
+import { addItem, removeItem, removeAll } from '../../store/Carrinho/Reducer'
+import { addPedido } from '../../store/Pedidos/Reducer'  
 import { useAlert } from "react-alert";
 
 
@@ -31,28 +29,30 @@ function Carrinho() {
         dispatch(removeAll(items));
     }
 
-    
-    return (
-        <> 
-            <Navbar />
-            
-            <div className="Carrinho">
-                {/* { console.log(carrinho) } */}
-                { carrinho && carrinho.length == 0 ? 
-                    <h1 className="Boasvindas"> Sem produtos no carrinho... </h1>
-                    :
-                    <CarrinhoItems 
+    function carrinhoVazio () {
+        if (carrinho && carrinho.length === 0 )
+        {
+            return ( <h1 className="Boasvindas"> Sem produtos no carrinho... </h1> );
+        } 
+        else {
+            return (
+            <CarrinhoItems 
                         items={carrinho}
                         addItemCarrinho={addItemCarrinho}
                         removeItemCarrinho={removeItemCarrinho}
                         addItemsPedido={addItemsPedido}
-                    />    
-                }
+            /> );
+        }
+    }
+
+    
+    return (
+        <> 
+            <div className="Carrinho">
+                
+                { carrinhoVazio() }
                 
             </div>    
-            
-        
-            <Footer />
         </>
     );
 }

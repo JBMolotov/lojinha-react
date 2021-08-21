@@ -2,7 +2,7 @@ import React from 'react';
 import Item from "./Item";
 
 
-import './Items.css';
+import './ItemList.css';
 
 const Items = ({ items }) => {
     // const total = useSelector(calculateTotalSelector);
