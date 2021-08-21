@@ -40,14 +40,14 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
         }
     }
 
-    function checarCupom (cupom) {
+    function checarCupom () {
         if(cupom === 'primeiracompra')
             return (<p>Cupom de 20% aplicado</p>)
         else 
             return (<p>Sem cupom aplicado</p>)
     }
 
-    function calcularTotal (cupom) {
+    function calcularTotal () {
         if(cupom === 'primeiracompra')
             return ( <h1>Total: {formatPrice(total*0.8)}</h1> )
         else

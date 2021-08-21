@@ -20,7 +20,8 @@ const options = {
     transition: 'scale'
   };
 
-export default () => {
+  
+export default function lojinha() {
     return (
         <Provider store={store}>
             <Router>

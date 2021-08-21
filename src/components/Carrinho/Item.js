@@ -25,9 +25,7 @@ const Item = ({ item,  addItemCarrinho, removeItemCarrinho }) => {
     }
 
     return ( 
-        <>
-            { itemExist() }
-        </>
+       itemExist()       
      );
 }
  

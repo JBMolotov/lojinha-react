@@ -7,14 +7,18 @@ import './ItemList.css';
 const Items = ({ items }) => {
     // const total = useSelector(calculateTotalSelector);
 
+    function temItems () {
+        // console.log(items)
+        if (items) {
+            return (
+                items.map((item) => (
+                    <Item key={item.id} item={item} />  ))
+            )
+        }
+    }
+
     return ( 
-        <>
-            {console.log (items)}
-            { items ?  items.map((item) => (
-                <Item key={item.id} item={item} /> 
-            )) : <></> 
-            }
-        </>
+        temItems()
      );
 }
  

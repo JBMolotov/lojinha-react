@@ -9,7 +9,7 @@ export const removeAll = createAction('REMOVE_ALL');
 export default createReducer(INITIAL_STATE, {
     [addItem]: (state, action) => handleAddItem(state, action),
     [removeItem]: (state, action) => handleRemoveItem(state, action),
-    [removeAll]: []
+    [removeAll]: () => []
 });
 
 function novoItem (action) {
