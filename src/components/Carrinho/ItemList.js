@@ -20,7 +20,7 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
         setValues({...values, [name]: value});
     }
 
-    function AplicarCupom (){
+    function aplicarCupom (){
         if (values.cupom === 'PRIMEIRACOMPRA')
         {
             alert.success("Cupom aplicado!");
@@ -61,7 +61,7 @@ const Items = ({ items, addItemCarrinho, removeItemCarrinho, addItemsPedido }) =
             <div className="Cupom">
                 {checarCupom()}
                 <input name="cupom" onChange={onChange} placeholder="Cupom de desconto"></input>
-                <button onClick={AplicarCupom} >Aplicar cupom</button>
+                <button onClick={aplicarCupom} >Aplicar cupom</button>
             </div>
 
             <div className="Opcoes">
